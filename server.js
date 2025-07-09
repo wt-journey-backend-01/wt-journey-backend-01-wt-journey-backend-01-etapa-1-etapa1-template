@@ -44,6 +44,7 @@ app.get('/api/lanches', (req, res) => {
     res.status(200).json(lanches)
 })
 
+// Opcional: uso do padrão PRG (POST, REDIRECT, GET)
 app.post('/contato', (req, res) => {
     const nome = req.body.nome
     const email = req.body.email
@@ -57,9 +58,10 @@ app.post('/contato', (req, res) => {
         mensagem
     })
 
-    res.redirect(`/contato-recebido?${params.toString()}`)
+    res.status(302).redirect(`/contato-recebido?${params.toString()}`)
 })
 
+// Opcional: uso do padrão PRG (POST, REDIRECT, GET)
 app.get('/contato-recebido', (req, res) => {
     const nome = req.query.nome
     const email = req.query.email
@@ -85,31 +87,7 @@ app.get('/contato-recebido', (req, res) => {
     `)
 })
 
-// app.post('/contato', (req, res) => {
-//     const nome = req.body.nome
-//     const email = req.body.email
-//     const assunto = req.body.assunto
-//     const mensagem = req.body.mensagem
-//     res.status(200).send(`
-//         <head>
-//             <link rel="stylesheet" href="/css/style.css">
-//         </head>
-//         <body>
-//             <main>
-//                 <header>
-//                     <a href="/">DevBurger</a>
-//                 </header>
-//                 <h1>Agradecemos pela mensagem!</h1>
-//                 <p>Nome: ${nome}</p>
-//                 <p>Email: ${email}</p>
-//                 <p>Assunto: ${assunto}</p>
-//                 <p>Mensagem: ${mensagem}</p>
-//             </main>
-//         </body>
-//     `)
-// })
-
-// Trata rotas não existentes
+// Opcional: trata rotas não existentes
 app.use((req, res) => {
     res.status(404).sendFile(path.join(viewsPath, '404.html'))
 })
