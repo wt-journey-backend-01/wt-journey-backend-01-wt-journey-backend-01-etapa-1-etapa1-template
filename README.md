@@ -181,3 +181,5 @@ Deverão ser implementadas as seguintes views com as seguintes especificações:
 - Ao realizar a requisição ```POST /contato``` o servidor recebe o payload, o processa e retorna uma ordem de redirecionamento para a rota ```/contato-recebido```.
 
 - O servidor realiza a ordem com uma requisição ```GET``` para a rota especificada, servindo a página de ```/contato-recebido```.
+
+- Dica: não armazene estado no servidor.
