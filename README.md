@@ -13,7 +13,7 @@ Este projeto consiste em um pequeno servidor web que apresenta o cardápio da ha
 Para manter o projeto organizado, tente seguir a seguinte estrutura de diretórios e arquivos:
 
 ```bash
-devburger/
+seu-repositório/
 ├── public/
 │   ├── css/
 │   │   └── style.css
