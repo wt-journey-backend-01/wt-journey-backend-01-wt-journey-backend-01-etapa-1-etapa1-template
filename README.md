@@ -1,186 +1,151 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/fO8pjV07)
-# Desafio: Protótipo de Cardápio Digital - DevBurger
+# Jornada Levty - Fundamentos do Backend
 
-Bem-vindo(a) ao desafio de desenvolvimento do protótipo de um cardápio digital para a nossa nova hamburgueria gourmet, a "DevBurger"!
+Este projeto demonstra os conceitos fundamentais do desenvolvimento backend através de uma aplicação Node.js com Express, criada para a **Jornada Levty**.
 
-O objetivo é criar uma aplicação web simples e funcional utilizando Node.js e Express. Nesta primeira fase, não nos preocuparemos com bancos de dados; toda a lógica de exibição e recebimento de dados será gerenciada diretamente pelo servidor.
+## 🎯 Objetivo
 
-## Visão Geral do Projeto
+Compreender como uma página da internet consegue exibir um formulário, receber dados e retornar uma resposta, explorando os fundamentos do desenvolvimento backend antes mesmo da separação entre front-end e back-end.
 
-Este projeto consiste em um pequeno servidor web que apresenta o cardápio da hamburgueria e permite que os clientes enviem sugestões de novos lanches. É uma excelente oportunidade para praticar conceitos fundamentais de back-end com Node.js, como a criação de servidores, o gerenciamento de rotas e o tratamento de formulários.
+## 🚀 Funcionalidades Implementadas
 
-## Estrutura de Arquivos
+### ✅ Requisitos Atendidos
+- **Servidor Node.js com Express**: Aplicação backend completa
+- **Fornecimento de arquivos estáticos**: CSS e recursos servidos pelo servidor
+- **Geração de HTML pelo servidor**: Páginas dinâmicas criadas no backend
+- **Processamento de formulários**: Recebimento e validação de dados
+- **Templates HTML dinâmicos**: Respostas personalizadas baseadas nos dados
+- **Rotas API com JSON**: Simulação de uma API REST
+- **Diferenciação de rotas**: Estáticas, templates e API
 
-Para manter o projeto organizado, tente seguir a seguinte estrutura de diretórios e arquivos:
+### 📋 Endpoints Disponíveis
 
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| GET | `/` | Página inicial com informações do projeto |
+| GET | `/formulario` | Formulário de contato gerado pelo servidor |
+| POST | `/processar-formulario` | Processa dados do formulário e retorna resposta |
+| GET | `/api/dados` | API que retorna dados em JSON |
+| GET | `/api/cardapio` | API que retorna cardápio de hambúrgueres em JSON |
+| POST | `/api/cardapio` | API para adicionar novo hambúrguer ao cardápio |
+| GET | `/api/contato` | API que retorna dados de contato em JSON |
+| GET | `/cardapio` | Página HTML do cardápio de hambúrgueres |
+| GET | `/gerenciar-cardapio` | Página para gerenciar o cardápio (adicionar hambúrgueres) |
+| GET | `/contato` | Página de informações de contato |
+| GET | `/static/*` | Arquivos estáticos (CSS, imagens) |
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Node.js**: Runtime JavaScript
+- **Express.js**: Framework web para Node.js
+- **HTML5**: Estrutura das páginas
+- **CSS3**: Estilização e animações
+- **JavaScript**: Lógica do servidor
+- **Body Parser**: Processamento de dados de formulário
+
+## 📦 Instalação e Execução
+
+### Pré-requisitos
+- Node.js instalado (versão 14 ou superior)
+- npm ou yarn
+
+### Passos para execução
+
+1. **Clone o repositório**
+   ```bash
+   git clone [URL_DO_REPOSITORIO]
+   cd jornada-levty-backend
+   ```
+
+2. **Instale as dependências**
+   ```bash
+   npm install
+   ```
+
+3. **Execute o servidor**
+   ```bash
+   npm start
+   ```
+
+4. **Acesse a aplicação**
+   - Abra seu navegador
+   - Acesse: `http://localhost:3000`
+
+### Modo de desenvolvimento
 ```bash
-seu-repositório/
-├── public/
-│   ├── css/
-│   │   └── style.css
-│   ├── images/
-│   │    └── logo.png (opcional)
-│   ├── data
-│   │     └── lanches.json
-│   └── 404.html (opcional)
-│
-├── views/
-│   ├── index.html
-│   └── contato.html        
-│
-├── .gitignore
-├── package-lock.json
-├── package.json
-├── README.md
-└── server.js
+npm run dev
 ```
+(Requer nodemon instalado globalmente: `npm install -g nodemon`)
 
-- **`public/`**: Contém todos os arquivos estáticos que serão servidos diretamente ao cliente, como folhas de estilo (CSS), imagens, arquivos JSON e scripts do lado do cliente.
-- **`views/`**: Contém os arquivos HTML estáticos que serão servidos por cada endpoint.
-- **`server.js`**: O coração da nossa aplicação, onde o servidor Express será configurado e todas as rotas serão definidas.
-- **`package.json`**: Arquivo de manifesto do projeto Node.js, que inclui as dependências (como o Express).
-- **`README.md`**: Este arquivo, com a documentação do projeto.
-
-## Como Iniciar o Servidor
-
-Siga os passos abaixo para configurar e rodar o projeto em sua máquina local.
-
-**1. Crie o projeto seguindo a estrutura**
-
-Clone o repositório e execute o seguinte comando: 
-
-```npm init -y```
-
-Depois, crie os repositórios e arquivos e diretórios seguindo a estrutura de exemplo.
-
-**2. Instale as Dependências**
-
-Navegue até o diretório raiz do projeto pelo terminal e instale o Express.js:
-
-```bash
-npm install express
-```
-Se você estiver recebendo os dados do formulário via POST, precisará de um middleware para interpretar o corpo da requisição. O Express já inclui o express.urlencoded.
-
-**Observação:** não devem ser utilizadas outras dependências além do express, como template engines.
-
-**3. Crie o servidor**
-
-Insira este código no arquivo server.js
+## 🏗️ Estrutura do Projeto
 
 ```
-const express = require('express')
-
-const app = express();
-const PORT = 3000;
-
-app.get('/', (req, res) => {
-    res.send("Hello World!");
-});
-
-app.listen(PORT, () => {
-    console.log(`Servidor da DevBurger rodando em localhost:${PORT}`);
-});
+jornada-levty-backend/
+├── server.js              # Servidor principal com Express
+├── package.json           # Configurações e dependências
+├── README.md              # Documentação
+└── js/                    # Arquivos estáticos
+    ├── main.html          # Página original (não utilizada pelo servidor)
+    ├── style.css          # Estilos CSS
+    └── imagem.png         # Imagem do projeto
 ```
 
-**4. Inicie o Servidor**
+## 🔧 Conceitos Demonstrados
 
-Execute o seguinte comando no terminal:
+### 1. **Protocolo HTTP**
+- Requisições GET e POST
+- Códigos de status (200, 400, 404)
+- Headers e body das requisições
 
-```bash
-npm start
-```
+### 2. **Servidor Web**
+- Criação de servidor com Express
+- Middleware para processamento de dados
+- Roteamento de requisições
 
-O servidor será iniciado, e você deverá ver uma mensagem no console, por exemplo:
+### 3. **Geração de HTML**
+- Templates HTML dinâmicos
+- Inserção de dados do usuário
+- Respostas personalizadas
 
-Servidor da DevBurger rodando em http://localhost:3000
+### 4. **Processamento de Dados**
+- Validação de formulários
+- Parsing de dados (body-parser)
+- Tratamento de erros
 
-Agora, você pode abrir seu navegador e acessar http://localhost:3000. O texto "Hello World!" deverá ser exibido no seu navegador.
+### 5. **APIs REST**
+- Endpoint JSON
+- Estrutura de resposta padronizada
+- Simulação de dados de API
 
-## Rotas Implementadas
-A aplicação possui as seguintes rotas:
+## 🎨 Interface
 
-| Rota  | Descrição | Método | Status code esperado | Resposta | Observações |
-| :----: | -------- | :------: | :--------------------: | ------ | ----------|
-| Raíz ```/``` | Serve a página principal da aplicação (index.html), que exibe o cardápio da "DevBurger" e um formulário para que os clientes possam sugerir um novo sabor de lanche. | ```GET``` | ```200``` | arquivo index.html. | - |
-| ```/sugestao``` | Recebe os dados enviados pelo formulário da página inicial. O servidor processa esses dados e exibe uma página de agradecimento personalizada. | ```GET``` | ```200``` | página de agradecimentos com os dados passados no formulário da rota raíz. | O envio do formulário deve ser feito utilizando query string, com os parâmetros ```nome``` e ```ingredientes ```|
-| ```/contato``` | Serve a página de de contato (contato.html), que exibe um formulário para que os clientes possam enviar mensagens. | ```GET``` | ```200``` | arquivo contato.html. | - |
-| ```/contato``` | Recebe os dados do cliente e do contato fornecidos no formulário da página de contato. O servidor processa esses dados e exibe a página de contato recebido. | ```POST``` | ```200``` | págna HTML gerada dinamicamente contendo os dados do cliente passados no formulário. | Exemplo de payload abaixo |
-| ```/api/lanches``` | Uma rota de API simulada que retorna uma lista de lanches pré-definidos em formato JSON. Ideal para ser consumida por um futuro front-end dinâmico. | ```GET``` | ```200``` | retorna um JSON listando lanches, simulando uma API | Exemplo abaixo |
+A aplicação mantém o design original do portfolio com:
+- Fundo animado
+- Design responsivo
+- Elementos flutuantes
+- Gradientes e efeitos visuais
+- Formulários estilizados
 
-## Observações
+## 📚 Aprendizados
 
-### **1) Exemplo de URL com query string- Rota de Sugestão:**  
+Esta aplicação demonstra como:
 
-```/sugestao?nome=Banh+mi&ingredientes=pao,vegetais,frango```
+1. **Servidores funcionam**: Processamento de requisições HTTP
+2. **Dados são trocados**: Formulários e APIs
+3. **HTML é gerado**: Templates dinâmicos no backend
+4. **Rotas são organizadas**: Diferentes tipos de resposta
+5. **APIs são estruturadas**: Padrões REST básicos
 
-### **2) Payload do envio de contato:** 
+## 👩‍💻 Desenvolvedora
 
-**JSON**
-```
-{
-  "nome": "Tram Anh Nguyen",
-  "email": "tramanh@gmail.com",
-  "assunto": "Sugestão de Evento",
-  "mensagem": "Gostaria de sugerir que vocês organizassem um evento de degustação de novos lanches!"
-}
-```
+**Samira Kelly da Costa Reis**
+- Desenvolvedora Backend
+- Especializada em APIs e microsserviços
+- Transformando ideias em soluções robustas
 
-- **Corpo da requisição (Payload):**
-   - nome (String): nome do cliente
-   - email (String): e-mail do cliente
-   - assunto (String): assunto do contato
-   - mensagem (String): mensagem explicando o motivo do contato
-       
-### **3) Retorno da API de lanches:** 
+## 📄 Licença
 
-O endpoint /api/lanches deverá retornar um JSON com a seguinte estrutura:
+MIT License - Sinta-se livre para usar, modificar e distribuir.
 
-**JSON**
-```
-[
-  {
-    "id": 1,
-    "nome": "DevBurger Clássico",
-    "ingredientes": "Pão brioche, Carne 150g, Queijo cheddar, Alface americana, Tomate fresco, Molho especial"
-  },
-  {
-    "id": 2,
-    "nome": "Burger de Bacon",
-    "ingredientes": "Pão australiano, Carne 180g, Queijo prato, Bacon crocante, Cebola caramelizada, Molho barbecue"
-  },
-  {
-    "id": 3,
-    "nome": "Commit Veggie",
-    "ingredientes": "Pão integral, Burger de grão de bico, Queijo vegano, Rúcula, Tomate seco, Maionese de ervas"
-  }
-]
-```
+---
 
-A resposta deve conter uma lista com no mínimo 3 lanches e cada lanche deve possuir os mesmos atributos exibidos acima.
-
-## Views:
-Deverão ser implementadas as seguintes views com as seguintes especificações:
-
-| Página | Descrição | Requisitos | Observações |
-| :------: | --------- | ---------- | ----------- |
-| index.html | Template exibido na rota raíz ```/```. | deve possuir, pelo menos, um formulário com os campos ```nome``` e ```ingredientes``` (utilize tags ```<input>``` ou ```<textarea>```) e um botão de tipo submit, além de âncoras (tag <a>) para a rota de contato ```/contato``` e para a API simulada ```/api/lanches```. Layout e estilização ficam ao seu critério.| é altamente recomendado o uso da tag label e atributos de ID, juntamente com os campos do formulário. |
-| Página de agradecimento | Template exibido após uma requisição ```GET``` à ```/sugestao```. | Deverá exibir uma mensagem de agradecimento pela sugestão e os dados inseridos no formulário durante seu envio, presente nos parâmetros da URL. | - |
-| contato.html | Template exibido após uma requisição ```GET``` à ```/contato``` | Deve conter um formulário com os campos de ```nome```, ```email```, ```assunto``` e ```mensagem```, um botão do tipo "submit" e uma âncora (tag <a>) para à rota raíz ```/```. | É altamente recomendado o uso da tag label e IDs, juntamente com os campos do formulário. |
-| Página de contato | Template exibido após uma requisição ```POST``` à ```/contato``` | Deve exibir uma mensagem de agradecimento pela mensagem, os dados passados no formulário da página ```contato.html``` e possuir uma âncora para a rota raíz ```/``` | - |
-| 404.html (opcional) | Template exibido quando uma rota não existente é acessada. | Deve conter uma mensagem de erro qualquer e uma âncora para a rota raíz ```/```  | - |
-
-## Opcional:
-
-### Tratamento de Página Não Encontrada (Erro 404)
-- Foi implementado um middleware no final da cadeia de rotas em server.js.
-
-- Se uma requisição chegar ao servidor e não corresponder a nenhuma das rotas definidas (/, /sugestao, /contato, /api/lanches), o servidor responderá com um status 404 e uma página de erro amigável, informando ao usuário que a página não foi encontrada.
-
-### Uso do padrão PRG (POST, REDIRECT, GET)
-
-- Ao realizar a requisição ```POST /contato``` o servidor recebe o payload, o processa e retorna uma ordem de redirecionamento para a rota ```/contato-recebido```.
-
-- O servidor realiza a ordem com uma requisição ```GET``` para a rota especificada, servindo a página de ```/contato-recebido```.
-
-- Dica: não armazene estado no servidor.
+**Jornada Levty** - Resgatando os fundamentos do desenvolvimento backend! 🚀

@@ -1,0 +1,195 @@
+/* style.css - Simples, bonito e limpo */
+
+:root {
+    --roxo-fundo: #7c3aed;
+    --roxo-card: #a78bfa;
+    --roxo-borda: #8b5cf6;
+    --roxo-titulo: #fff;
+    --cinza-texto: #f3f4f6;
+    --verde-botao: #22c55e;
+    --verde-botao-hover: #16a34a;
+    --sombra-card: 0 2px 12px rgba(124, 58, 237, 0.10);
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--roxo-fundo);
+    color: var(--cinza-texto);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #6d28d9;
+    color: #fff;
+    padding: 20px 0 10px 0;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-left: 32px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 32px;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.nav-menu a:hover {
+    color: var(--roxo-card);
+}
+
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 24px;
+}
+
+h1, .page-title {
+    color: var(--roxo-titulo);
+    font-size: 2.1rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.card-form, .card-list {
+    background: var(--roxo-card);
+    border-radius: 14px;
+    padding: 20px 18px;
+    margin-bottom: 28px;
+    border: 1.5px solid var(--roxo-borda);
+    box-shadow: var(--sombra-card);
+}
+
+.card-form label {
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.card-form input, .card-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+.card-form input::placeholder, .card-form textarea::placeholder {
+    color: #b4aee8;
+    opacity: 1;
+}
+
+.button-main {
+    background: var(--verde-botao);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 8px;
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.10);
+    display: block;
+    width: 100%;
+    max-width: 320px;
+}
+.button-main:hover {
+    background: var(--verde-botao-hover);
+    transform: translateY(-2px) scale(1.03);
+}
+
+.card-list-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.menu-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px 14px;
+    color: #6d28d9;
+    border: 1.5px solid #ede9fe;
+    box-shadow: var(--sombra-card);
+    font-size: 1rem;
+    position: relative;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.menu-card:hover {
+    box-shadow: 0 4px 16px #a78bfa44;
+    transform: translateY(-2px) scale(1.02);
+}
+.menu-card .menu-index {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--roxo-card);
+    color: #fff;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.98rem;
+    box-shadow: 0 1px 4px #a78bfa22;
+}
+.menu-card h2 {
+    font-size: 1.1rem;
+    margin: 0 0 8px 0;
+    color: #6d28d9;
+    font-weight: bold;
+}
+.menu-card p {
+    color: #6d28d9;
+    margin: 0;
+    font-size: 0.97rem;
+}
+
+@media (max-width: 700px) {
+    main {
+        padding: 8px;
+    }
+    .card-form, .card-list {
+        padding: 10px 4px;
+    }
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    header {
+        font-size: 1.1rem;
+        padding-left: 12px;
+    }
+}
