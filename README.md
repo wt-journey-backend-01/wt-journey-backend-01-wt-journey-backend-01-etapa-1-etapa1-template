@@ -116,14 +116,6 @@ jornada-levty-backend/
 - Estrutura de resposta padronizada
 - Simulação de dados de API
 
-## 🎨 Interface
-
-A aplicação mantém o design original do portfolio com:
-- Fundo animado
-- Design responsivo
-- Elementos flutuantes
-- Gradientes e efeitos visuais
-- Formulários estilizados
 
 ## 📚 Aprendizados
 
