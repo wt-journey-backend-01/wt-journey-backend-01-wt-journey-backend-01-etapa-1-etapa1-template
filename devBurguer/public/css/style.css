@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Banner superior */
+.banner {
+  background: url(https://img.freepik.com/vetores-gratis/padrao-de-fundo-de-hamburguer_474888-6821.jpg);
+  padding: 7rem 1rem;
+  text-align: center;
+  color: white;
+}
+
+.banner .logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.titulo-centralizado {
+  text-align: center;
+  background-color: #fff;
+  padding: 1rem 0;
+  margin-top: -2rem;
+  z-index: 2;
+  position: relative;
+}
+
+.titulo-centralizado h1 {
+  font-size: 2rem;
+  color: #842029;
+  margin-bottom: 0.3rem;
+}
+
+.titulo-centralizado p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Menu superior */
+.menu-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: #fff;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.Barra_pesquisa {
+  flex: 1;
+  padding: 0.5rem;
+  min-width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.pedidos,
+.sugestões {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pedidos {
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+.sugestões {
+  background-color: #fff3cd;
+  text-decoration: none;
+  color: #664d03;
+}
+
+.status {
+  font-weight: bold;
+  white-space: nowrap;
+  padding: 0.4rem 0.8rem;
+  border-radius: 10px;
+  color: white;
+  background-color: red; 
+}
+
+/* Abas */
+.abas {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.botao_aba button {
+  background-color: white;
+  border: none;
+  font-weight: bold;
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.botao_aba .botao_lanches {
+  border-bottom: 3px solid red;
+  color: red;
+}
+
+/* Produtos */
+.produtos {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Título das seções */
+.lanches_texto {
+  width: 100%;
+  color: red;
+  margin-bottom: 1rem;
+  margin-left: 15px;
+}
+
+/* Estilo dos cards de LANCHES */
+.tipos_lanches {
+  flex: 1 1 calc(50% - 1rem);
+  max-width: calc(50% - 1rem);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.tipos_lanches img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-left: 1rem;
+}
+
+/* Estilo dos cards de BEBIDAS */
+.tipos_bebidas {
+  flex: 1 1 calc(50% - 1rem);
+  max-width: calc(50% - 1rem);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.tipos_bebidas img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .tipos_lanches,
+  .tipos_bebidas {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+.tipos_lanches img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-left: 1rem;
+}
+
+.caixa_lanches h6 {
+  margin-bottom: 0.25rem;
+}
+
+.caixa_lanches p {
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.caixa_lanches span {
+  font-weight: bold;
+  color: green;
+}
